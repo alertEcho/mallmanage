@@ -25,8 +25,8 @@ export default {
         };
     },
     methods: {
-        handleLogin() {
-            this.$http.post('login', this.formdata).then(res => {
+       async handleLogin() {
+           const res = await this.$http.post('login', this.formdata)
                 // eslint-disable-next-line no-console
                 const {code,message} = res.data
 
@@ -36,7 +36,7 @@ export default {
                 }else{
                     this.$message.error(message)
                 } 
-            })
+         
         }
     }
 }
