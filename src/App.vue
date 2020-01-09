@@ -4,7 +4,7 @@
     <div>
       
     </div>
-    <Login />
+    <Login msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
@@ -21,6 +21,6 @@ export default {
 
 <style>
 #app {
-
+  height: 100%;
 }
 </style>
