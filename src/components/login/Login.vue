@@ -29,10 +29,9 @@ export default {
             this.$http.post('login', this.formdata).then(res => {
                 // eslint-disable-next-line no-console
                 const {code,message} = res.data
-                // eslint-disable-next-line no-console
 
-                
                 if(code === 200) {
+                    this.$router.push({name:'home'})
                     this.$message.success('登录成功！');
                 }else{
                     this.$message.error(message)
