@@ -28,9 +28,10 @@ export default {
        async handleLogin() {
            const res = await this.$http.post('login', this.formdata)
                 // eslint-disable-next-line no-console
-                const {code,message} = res.data
+                const {code,message,data} = res.data
 
                 if(code === 200) {
+                    localStorage.setItem('token',data)
                     this.$router.push({name:'home'})
                     this.$message.success('登录成功！');
                 }else{
